@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MeAlembra! | Gestor de Tarefas</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- CABEÇALHO -->
+        
+<header class="header">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            <span>♡</span>
+            <i class="calendar-symbol">▦</i>
+        </div>
+
+        <div class="brand-text">
+            <h1>MeAlembra</h1>
+            <p>GESTOR DE TAREFAS E LEMBRETES</p>
+        </div>
+
+    </div>
+
+
+    <div class="header-actions">
+
+        <button class="icon-button notification-button"
+                aria-label="Notificações"
+                title="Notificações">
+            <i class="fa-regular fa-bell"></i>
+            <span class="notification-badge"></span>
+        </button>
+
+        <button class="icon-button settings-button"
+                aria-label="Definições"
+                title="Definições">
+            <i class="fa-solid fa-gear"></i>
+        </button>
+
+    </div>
+
+
+</header>
+
+
+        <!-- NAVEGAÇÃO -->
+        <nav class="navigation">
+
+            <button class="nav-button active">
+                ☑ Tarefas
+            </button>
+
+            <button class="nav-button">
+                ▦ Calendário
+            </button>
+
+            <button class="nav-button">
+                ✓ Concluídas
+            </button>
+
+            <button class="nav-button">
+                ▥ Estatísticas
+            </button>
+
+        </nav>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main>
+
+            
+            <section class="theme-settings">
+
+                <label for="theme-selector">
+                    Mudar o tema
+                </label>
+
+                <select id="theme-selector">
+
+                    <option value="beige">Bege</option>
+                    <option value="pink">Rosa</option>
+                    <option value="blue">Azul</option>
+                    <option value="gray">Cinza</option>
+
+                </select>
+
+            </section>
+
+            <section class="welcome-section">
+
+                <div>
+                    <h2>Olá! ♡</h2>
+                    <p>O que você não gostaria de esquecer hoje? </p>
+                </div>
+
+                <div class="today-date" id="today-date">
+                    <!-- Data preenchida pelo JavaScript -->
+                </div>
+
+            </section>
+
+            <!-- CRIAR TAREFA -->
+            <section class="create-section">
+
+                <button id="open-form-button" class="create-button">
+                    + Criar nova tarefa
+                </button>
+
+            </section>
+
+            <!-- FORMULÁRIO -->
+            <section id="task-form-section" class="task-form-section hidden">
+
+                <h2>Nova tarefa</h2>
+
+                <form id="task-form">
+
+                    <label for="task-title">Título</label>
+                    <input
+                        type="text"
+                        id="task-title"
+                        placeholder="O que tu não pode esquecer, ein?"
+                        required
+                    >
+
+                    <label for="task-description">Descrição</label>
+                    <textarea
+                        id="task-description"
+                        placeholder="Conte-me detalhes, hmmm..."
+                    ></textarea>
+
+                    <label for="task-date">Data</label>
+                    <input type="date" id="task-date" required>
+
+                    <label for="task-time">Hora</label>
+                    <input type="time" id="task-time" required>
+
+                    <div class="form-actions">
+
+                        <button type="button" id="cancel-form-button">
+                            Cancelar
+                        </button>
+
+                        <button type="submit">
+                            Guardar tarefa ♡
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+            <!-- TAREFAS PENDENTES -->
+            <section class="tasks-section">
+
+                <h2>☷ Tarefas Pendentes</h2>
+
+                <div id="pending-tasks" class="tasks-container">
+                    <!-- Tarefas carregadas pela API -->
+                </div>
+
+            </section>
+
+            <!-- TAREFAS CONCLUÍDAS -->
+            <section class="completed-section">
+
+                <h2>✓ Tarefas Concluídas</h2>
+
+                <div id="completed-tasks" class="tasks-container">
+                    <!-- Tarefas concluídas carregadas pela API -->
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- RODAPÉ -->
+        <footer class="footer">
+            <p>MeAlembra ♡ Pequenas tarefas, grandes conquistas.</p>
+        </footer>
+
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>

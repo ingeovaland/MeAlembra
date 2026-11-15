@@ -1,0 +1,27 @@
+
+# Ambiente virtual
+backend/.venv/
+
+# Cache Python
+__pycache__/
+*.py[cod]
+
+# Bases de dados
+*.db
+*.sqlite
+*.sqlite3
+
+# Segredos
+.env
+.env.*
+
+# Backups
+*_backup.db
+*.bak
+
+# Ficheiros temporários
+.DS_Store
+Thumbs.db
+
+# Anotações pessoais
+aprendizados.txt
